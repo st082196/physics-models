@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Магнитная индукция двух проводников</title>
+<script src="induction.js">
+</script>
+<link rel="stylesheet" href="induction.css">
+<style>
+html,body{height: 100%;}
+</style>
+</head>
+<body>
+	<div style="width: 100%; height: 10%; background-color: #f0e9a8; border-radius: 10px; margin: 5px; box-sizing: border-box; padding: 5px; position: relative; text-align: center; font-size: 30px; padding: 25px">Силовые линии магнитного поля вокруг двух проводников с током</div>
+	<div class="content">
+		<div class="div" style="float:left; width:40%; position: relative" >
+			<p style="font-size:20px">Параметры:</p>
+			<div class="new-line">
+				<label>Параметры 1-го проводника:</label>
+        <label for="wire1x" style="position: absolute; left: 40%">x =</label>
+				<input id="wire1x" style="position: absolute; left: 44%" value="-200">
+        <label for="wire1y" style="position: absolute; left: 60%">y =</label>
+				<input id="wire1y" style="position: absolute; left: 64%" value="0">
+        <label for="wire1I" style="position: absolute; left: 80%">I =</label>
+				<input id="wire1I" style="position: absolute; left: 84%" value="-1">
+			</div>
+			<div class="new-line">
+				<label>Параметры 2-го проводника:</label>
+        <label for="wire2x" style="position: absolute; left: 40%">x =</label>
+				<input id="wire2x" style="position: absolute; left: 44%" value="200">
+        <label for="wire2y" style="position: absolute; left: 60%">y =</label>
+				<input id="wire2y" style="position: absolute; left: 64%" value="0">
+        <label for="wire2I" style="position: absolute; left: 80%">I =</label>
+				<input id="wire2I" style="position: absolute; left: 84%" value="1">
+			</div>
+			<div class="new-line">
+				<label>Начальные точки силовых линий:</label>
+				<input id="startPoints" style="width: 50%; position: absolute; left: 40%" value="-450,0 -400,0 -350,0 -300,0 -250,0 250,0 300,0 350,0 400,0 450,0" disabled>
+			</div>
+      <div class="new-line">
+        <label for="autoStartPoints">Автоматическая генерация начальных точек:</label>
+        <input type="checkbox" id="autoStartPoints" style="position: absolute; left: 44%" checked onclick="toggleAutoStartPoints()">
+        <label for="numStartPoints" style="position: absolute; left: 60%">Количество:</label>
+        <input id="numStartPoints" type="number" style="position: absolute; left: 73%" min="1" value="20">
+      </div>
+      <div class="new-line">
+        <label for="ds">Величина шага:</label>
+				<input id="ds" style="width: 25px; position: absolute; left: 17%" value="0.1" disabled>
+        <label for="maxSteps" style="position: absolute; left: 25%">Максимальное количество шагов:</label>
+				<input id="maxSteps" style="width: 45px; position: absolute; left: 60%" value="100000" disabled>
+        <label for="autoSteps" style="position: absolute; left: 73%">Автоматически:</label>
+				<input type="checkbox" id="autoSteps" style="position: absolute; left: 88%" checked onclick="toggleAutoSteps()">
+			</div>
+			<div>
+        <button onclick="draw()">Применить</button>
+			</div>
+		</div>
+		<div class="div" style="position: relative; float:right; width:59.5%; padding-left: 0;">
+			<svg id = "canvas" width="100%" height="100%" viewbox="-500 -500 1000 1000">
+      </svg>
+		</div>
+	</div>
+</body>
+</html>
